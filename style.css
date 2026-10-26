@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+}
+body {
+    background-color: #dadbdb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.container *{
+    padding: 5px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: rgb(255, 255, 255);
+    border: 2px orange solid;
+    padding: 30px;
+    border-radius: 10px;
+    min-width: 220px;
+}
+.container a{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 5px;
+    border: 2px orange solid;
+    background-color: #dadbdb;
+    border-radius: 5px;
+    text-decoration: none;
+    color: orange;
+    transition: all 0.2s ease-in-out;
+}
+.container a:hover,
+.container a:focus{
+    background-color: orange;
+    color: #ffffff;
+    border: 2px white solid;
+}
