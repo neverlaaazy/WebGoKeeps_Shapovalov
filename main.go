@@ -59,10 +59,14 @@ func addKeepHandler(w http.ResponseWriter, r *http.Request) {
 		</head>
 		<body>
 			<div class="container">
-				<div class="conDivBtns">
-					<a class="conBtn" href="">Добавить</a>
-					<a class="conBtnExit" href="/keeps">Отмена</a>
-				</div>
+				<form method="POST">
+					<label for="keep">Текст заметки</label>
+					<textarea id="keep" class="formInputText" name="keep"></textarea>
+					<div class="conDivFormBtns">
+						<input class="formBtn" type="submit" value="Добавить">
+						<a class="conBtnExit" href="/keeps">Отмена</a>
+					</div>
+				</form>
 			</div>
 		</body>
 		</html>

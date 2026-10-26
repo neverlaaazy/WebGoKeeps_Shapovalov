@@ -23,7 +23,8 @@ body {
     border-radius: 10px;
     min-width: 220px;
 }
-.container a{
+.container a,
+.container button{
     text-align: center;
     font-size: 20px;
     font-weight: bold;
@@ -55,4 +56,40 @@ body {
     background-color: rgb(255, 0, 0);
     color: #ffffff;
     border: 2px white solid;
+}
+
+.formBtn{
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px green solid;
+    border-radius: 5px;
+    background-color: white;
+    color: green;
+    transition: all 0.2s ease-in-out;
+}
+.formBtn:hover,
+.formBtn:focus{
+    background-color: green;
+    color: white;
+    border-color: white;
+}
+
+.container form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.conDivFormBtns{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.formInputText{
+    width: 100%;
+    min-height: 200px;
+    max-height: 350px;
+    resize: vertical;
 }
