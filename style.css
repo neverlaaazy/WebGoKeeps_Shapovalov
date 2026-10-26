@@ -25,19 +25,34 @@ body {
 }
 .container a{
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
+    background-color: #ffffff;
     padding: 5px;
-    border: 2px orange solid;
-    background-color: #dadbdb;
+    margin: 5px;
     border-radius: 5px;
     text-decoration: none;
-    color: orange;
     transition: all 0.2s ease-in-out;
 }
-.container a:hover,
-.container a:focus{
+
+.conBtn{
+    border: 2px orange solid;
+    color: orange;
+}
+.conBtn:hover,
+.conBtn:focus{
     background-color: orange;
+    color: #ffffff;
+    border: 2px white solid;
+}
+
+.conBtnExit{
+    border: 2px rgb(255, 0, 0) solid;
+    color: rgb(255, 0, 0);
+}
+.conBtnExit:hover,
+.conBtnExit:focus{
+    background-color: rgb(255, 0, 0);
     color: #ffffff;
     border: 2px white solid;
 }

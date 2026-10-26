@@ -16,14 +16,14 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 		</head>
 		<body>
 			<div class="container">
-				<h2>Добро пожаловать в <br><b>ЗАКЛАДКИ</b>!</h2>
+				<h2>Добро пожаловать в <br><b>4KEEPS</b>!</h2>
 				<b>Возможности:</b>
 				<ul>
 					<li>Просмотр;</li>
 					<li>Добавление;</li>
 					<li>Удаление.</li>
 				</ul>
-				<a href="/keeps">ВХОД</a>
+				<a class="conBtn" href="/keeps">ВХОД</a>
 			</div>
 		</body>
 		</html>
@@ -39,8 +39,47 @@ func keepsHandler(w http.ResponseWriter, r *http.Request) {
 			<link rel="stylesheet" href="/style.css">
 		</head>
 		<body>
+			<div class="container conKeeps">
+				<a class="conBtn" href="/showkeeps">Посмотреть</a>
+				<a class="conBtn" href="/addkeep">Добавить</a>
+				<a class="conBtnExit" href="/">ВЫХОД</a>
+			</div>
+		</body>
+		</html>
+	`)
+}
+func addKeepHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, `
+		<!DOCTYPE html>
+		<html>
+		<head>
+			<meta charset="UTF-8">
+			<title>Добавить закладку</title>
+			<link rel="stylesheet" href="/style.css">
+		</head>
+		<body>
 			<div class="container">
-				<a href="/">ВЫХОД</a>
+				<div class="conDivBtns">
+					<a class="conBtn" href="">Добавить</a>
+					<a class="conBtnExit" href="/keeps">Отмена</a>
+				</div>
+			</div>
+		</body>
+		</html>
+	`)
+}
+func showKeepsHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, `
+		<!DOCTYPE html>
+		<html>
+		<head>
+			<meta charset="UTF-8">
+			<title>Показать закладки</title>
+			<link rel="stylesheet" href="/style.css">
+		</head>
+		<body>
+			<div class="container">
+				<a class="conBtnExit" href="/keeps">Назад</a>
 			</div>
 		</body>
 		</html>
@@ -50,6 +89,8 @@ func keepsHandler(w http.ResponseWriter, r *http.Request) {
 func main() {
 	http.HandleFunc("/", homeHandler)
 	http.HandleFunc("/keeps", keepsHandler)
+	http.HandleFunc("/addkeep", addKeepHandler)
+	http.HandleFunc("/showkeeps", showKeepsHandler)
 
 	http.Handle("/style.css", http.FileServer(http.Dir(".")))
 
